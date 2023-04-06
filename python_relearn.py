@@ -66,7 +66,6 @@ customer = {
     "is_verified": True
 }
 
-print (customer("name")) # access of vales
 print (customer.get("name")) # access of values, but will give none is not a variable in dictonary
 
 
@@ -85,11 +84,26 @@ print (square(10))
 
 # Classes
 class Point:
+    def __init__(self, x_cord, y_cord):
+        self.x_cord=x_cord
+        self.y_cord=y_cord
+
     def move(self):
         print ("move")
 
     def draw(self):
         print("draw")
 
-point1 = Point()
+point1 = Point(10,1)
 point1.draw()
+
+# Inheritence 
+# create a class with argument (of parent class)
+# print (help (class_name))) --> can give you information about parent class
+class Coordinate(Point):
+    def __init__(self, x_cord, y_cord,continent):
+        super().__init__(x_cord, y_cord)
+        self.continent=continent
+
+
+
